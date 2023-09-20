@@ -7,6 +7,7 @@ Calender Event
 This project help you to customize the month cell based on the appointment using SfCalendar.
   -custom month cell builder
   -custom agenda
+  -dynamic max and min date updation
 
 
 try this 2 method:
@@ -134,3 +135,14 @@ and change the appointmentDisplayMode to MonthAppointmentDisplayMode.appointment
                           fontFamily: 'Arial')),
                 ),
 
+-> uncommand the below line for dynamically update from and to date from model
+
+               // minDate: (_startDateTime.text.toString() != "") ? DateTime.parse(_startDateTime.text.toString()) : DateTime.now() ,
+               // maxDate:(_endDateTime.text.toString() != "") ? DateTime.parse(_endDateTime.text.toString()) :DateTime(DateTime.now().year, DateTime.now().month+3, DateTime.now().day, 00, 45, 0),
+
+
+
+-> Initial date as current DateTime
+  initialDisplayDate: DateTime(DateTime.now().year,
+                    DateTime.now().month, DateTime.now().day, 00, 45, 0),
+               
