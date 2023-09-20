@@ -93,10 +93,10 @@ class ScheduleExample extends State<CustomAgenda> {
                   CalendarView.schedule
                 ],
                 viewNavigationMode: ViewNavigationMode.snap,
-               // monthCellBuilder: monthCellBuilder,
+                monthCellBuilder: monthCellBuilder,
                 monthViewSettings: MonthViewSettings
                 (
-                  appointmentDisplayMode: MonthAppointmentDisplayMode.appointment,
+                  appointmentDisplayMode: MonthAppointmentDisplayMode.none,
               appointmentDisplayCount : 2,
                 numberOfWeeksInView: 3,
                   monthCellStyle: MonthCellStyle(
@@ -222,9 +222,18 @@ class ScheduleExample extends State<CustomAgenda> {
                 Column(
                   children: [
                     const Divider(color: Colors.transparent,),
-                    Text(
+                    (DateTime.now().day.toString() == details.date.day.toString()) ? Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6), color: Color(0xFFcc0066)),
+                    child: Text(
                       details.date.day.toString(),
                       textAlign: TextAlign.center,
+                      style:  TextStyle(color: Colors.white),
+                    ),
+                  ) : Text(
+                    details.date.day.toString(),
+                    textAlign: TextAlign.center,
                     ),
                     const Divider(color: Colors.transparent,),
                     Row(
