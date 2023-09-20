@@ -79,7 +79,11 @@ class ScheduleExample extends State<CustomAgenda> {
                 ),
                 showNavigationArrow: true,
                 dataSource: dataSource,
-                initialSelectedDate: DateTime.now().add(const Duration(days: -1)),
+                initialDisplayDate: DateTime(DateTime.now().year,
+                DateTime.now().month, DateTime.now().day, 00, 45, 0),
+                //dynamically update from and to date from model
+               // minDate: (_startDateTime.text.toString() != "") ? DateTime.parse(_startDateTime.text.toString()) : DateTime.now() ,
+               // maxDate:(_endDateTime.text.toString() != "") ? DateTime.parse(_endDateTime.text.toString()) :DateTime(DateTime.now().year, DateTime.now().month+3, DateTime.now().day, 00, 45, 0),
                 onSelectionChanged: selectionChanged,
                 todayHighlightColor: Color(0xFFcc0066),
                 showDatePickerButton: true,
