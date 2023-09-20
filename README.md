@@ -5,6 +5,7 @@ Calender Event
 ## Getting Started
 
 This project help you to customize the month cell based on the appointment using SfCalendar.
+
   -custom month cell builder
   -custom agenda
   -dynamic max and min date updation
